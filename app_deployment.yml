@@ -18,9 +18,15 @@
       yum:
         name: "{{application}}"
         state: latest
+        use_backend: yum3
       register: result
 
     - name: printing to terminal application information
       debug:
-        msg: "This Ansible Playbook will install {{application}}"
+        msg: "The application: {{application}} has been installed"
       when: result.changed|bool
+
+    - name: printing to terminal application information
+      debug:
+        msg: "The application: {{application}} was already installed"
+      when: not result.changed|bool
