@@ -1,0 +1,26 @@
+---
+- name: application deployment
+  connection: local
+  hosts: localhost
+  gather_facts: false
+  become: yes
+  tasks:
+    - name: make sure application is not empty
+      assert:
+        that:
+          - "application != ''"
+
+    - name: printing to terminal application information
+      debug:
+        msg: "This Ansible Playbook will install {{application}}"
+
+    - name: install application
+      yum:
+        name: "{{application}}"
+        state: latest
+      register: result
+
+    - name: printing to terminal application information
+      debug:
+        msg: "This Ansible Playbook will install {{application}}"
+      when: result.changed|bool
