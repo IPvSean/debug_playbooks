@@ -1,0 +1,10 @@
+---
+- name: THIS PLAYBOOK DOES NOTHING
+  connection: local
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: HELLO WORLD
+      debug:
+        msg: "Hello World!"
