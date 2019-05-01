@@ -1,7 +1,6 @@
 ---
 - name: application deployment
-  connection: local
-  hosts: localhost
+  hosts: ansible
   gather_facts: false
   become: yes
   tasks:
