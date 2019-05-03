@@ -1,0 +1,10 @@
+---
+- name: THIS PLAYBOOK ROLLSBACK
+  connection: local
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: DATA CENTER ROLLBACK PROCESS STARTING
+      debug:
+        msg: "data center has been rolled back"
