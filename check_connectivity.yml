@@ -1,6 +1,6 @@
 ---
 - name: use wait for connection
-  hosts: webservers
+  hosts: all
   remote_user: ec2-user
   gather_facts: false
 
