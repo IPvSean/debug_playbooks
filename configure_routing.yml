@@ -1,0 +1,22 @@
+---
+- name: THIS PLAYBOOK CONFIGURED ROUTING FABRIC
+  connection: local
+  hosts: webservers
+  gather_facts: false
+
+  tasks:
+    - name: CONFIGURING NTP AND SYSTEM SERVICES
+      debug:
+        msg: "CONFIGURING NTP"
+
+    - name: CONFIGURING BANNER MESSAGE
+      debug:
+        msg: "CONFIGURING BANNER MESSAGE"
+
+    - name: CONFIGURING ROUTING FABRIC
+      debug:
+        msg: "CONFIGURING ROUTING FABRIC"
+
+    - name: CHECKIMG CONNECTIVITY
+      debug:
+        msg: "LINKS ARE STABLE"
