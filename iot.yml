@@ -1,0 +1,20 @@
+---
+- name: grab information about this IOT device
+  hosts: iot
+  become: yes
+  tasks:
+    - name: grab IOT version information
+      raw: "cat /etc/*release"
+      register: first_command_output
+
+    - name: printing to terminal IOT information
+      debug:
+        msg: "{{first_command_output}}"
+
+    - name: grab memory footprint from IOT device
+      raw: "free -m"
+      register: second_command_output
+
+    - name: printing IOT memory information
+      debug:
+        msg: "{{second_command_output}}"
