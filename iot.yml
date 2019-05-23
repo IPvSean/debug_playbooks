@@ -2,6 +2,7 @@
 - name: grab information about this IOT device
   hosts: iot
   become: yes
+  gather_facts: false
   tasks:
     - name: grab IOT version information
       raw: "cat /etc/*release"
@@ -9,7 +10,7 @@
 
     - name: printing to terminal IOT information
       debug:
-        msg: "{{first_command_output}}"
+        msg: "{{first_command_output.stdout}}"
 
     - name: grab memory footprint from IOT device
       raw: "free -m"
@@ -17,4 +18,4 @@
 
     - name: printing IOT memory information
       debug:
-        msg: "{{second_command_output}}"
+        msg: "{{second_command_output.stdout}}"
