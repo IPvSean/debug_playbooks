@@ -16,7 +16,6 @@
     - name: install application
       yum:
         name: "{{application}}"
-        state: latest
         use_backend: yum
         allow_downgrade: true
       register: result
