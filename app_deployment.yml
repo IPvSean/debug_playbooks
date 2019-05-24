@@ -18,6 +18,7 @@
         name: "{{application}}"
         state: latest
         use_backend: yum
+        allow_downgrade: true
       register: result
 
     - name: printing to terminal application information
