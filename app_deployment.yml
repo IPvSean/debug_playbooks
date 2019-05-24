@@ -1,6 +1,6 @@
 ---
 - name: application deployment
-  hosts: ansible
+  hosts: webservers
   gather_facts: false
   become: yes
   tasks:
