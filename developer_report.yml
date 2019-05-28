@@ -20,4 +20,4 @@
 
     - name: DISPLAY LINK TO INVENTORY REPORT
       debug:
-        msg: "Please go to http://{{hostvars['ansible'].ansible_host}}:8888"
+        msg: "Please go to http://{{ansible_host}}:8888"
