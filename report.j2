@@ -16,7 +16,7 @@
         </tr>
     </thead>
     <tbody>
-{% for linux_node in groups['routers'] %}
+{% for linux_node in groups['all'] %}
         <tr>
             <td>{{hostvars[linux_node]['ansible_net_hostname']}}</td>
             <td>{{hostvars[linux_node]['ansible_distribution_file_search_string']}}{{hostvars[linux_node]['ansible_distribution_version']}}</td>
