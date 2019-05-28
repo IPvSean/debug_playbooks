@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<h1>Developer Report</h1>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th>Hostname</th>
+            <th>Operating System</th>
+            <th>PATH</th>
+            <th>Kernel</th>
+            <th>Python Version</th>
+        </tr>
+    </thead>
+    <tbody>
+{% for linux_node in groups['routers'] %}
+        <tr>
+            <td>{{hostvars[linux_node]['ansible_net_hostname']}}</td>
+            <td>{{hostvars[linux_node]['ansible_distribution_file_search_string']}}{{hostvars[linux_node]['ansible_distribution_version']}}</td>
+            <td>{{hostvars[linux_node]['PATH']}}</td>
+            <td>{{hostvars[linux_node]['ansible_kernel']}}</td>
+            <td>{{hostvars[linux_node]['ansible_python_version']}}</td>
+        </tr>
+{% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
