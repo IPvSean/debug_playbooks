@@ -13,7 +13,8 @@
             <th>PATH</th>
             <th>Kernel</th>
             <th>Python Version</th>
-            <th>Package Manager<th>
+            <th>Package Manager</th>
+            <th>System Date Time</td>
         </tr>
     </thead>
     <tbody>
@@ -25,6 +26,7 @@
             <td>{{hostvars[linux_node]['ansible_kernel']}}</td>
             <td>{{hostvars[linux_node]['ansible_python_version']}}</td>
             <td>{{hostvars[linux_node]['ansible_pkg_mgr']}}</td>
+            <td>{{hostvars[linux_node]['ansible_date_time']['date']}}</td>
 
         </tr>
 {% endfor %}
