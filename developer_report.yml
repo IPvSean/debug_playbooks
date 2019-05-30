@@ -1,9 +1,9 @@
 ---
-- name: build network automation inventory report
+- name: grab linux facts
   hosts: all
   gather_facts: yes
 
-- name: build network automation inventory report
+- name: build developer report
   hosts: node1
   gather_facts: False
 
