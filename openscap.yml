@@ -1,6 +1,6 @@
 ---
 - name: build network automation inventory report
-  hosts: node1
+  hosts: all
   gather_facts: False
 
   vars:
