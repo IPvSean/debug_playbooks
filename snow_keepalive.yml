@@ -27,7 +27,7 @@
     - pause:
         seconds: 5
 
-    - name: CREATE AN INCIDENT
+    - name: DELETE AN INCIDENT
       snow_record:
         username: "{{ SN_USERNAME }}"
         password: "{{ SN_PASSWORD }}"
