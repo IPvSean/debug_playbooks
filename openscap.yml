@@ -34,7 +34,7 @@
       become: yes
       copy:
         src: ./{{item}}
-        dest: file_path/{{item}}
+        dest: "{{file_path}}/{{item}}"
         remote_src: yes
       loop:
         - report.xml
