@@ -25,11 +25,13 @@
       failed_when: "'Error' in command_result.stderr"
 
     - name: Create directory if it does not exist
+      become: yes
       file:
         path: "{{file_path}}"
         state: directory
 
     - name: move files into httpd
+      become: yes
       copy:
         src: ./{{item}}
         dest: file_path/{{item}}
