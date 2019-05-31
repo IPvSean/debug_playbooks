@@ -20,8 +20,9 @@
         path: "{{ssg_schema}}"
 
     - name: create HTML report
-      command: "oscap xccdf eval --fetch-remote-resources --profile xccdf_org.ssgproject.content_profile_standard --results report.xml --report index.html {{ssg_schema}} 2> /dev/null"
-      failed_when: "'FAILED' in command_result.stderr"
+      command: "oscap xccdf eval --fetch-remote-resources --profile xccdf_org.ssgproject.content_profile_standard --results report.xml --report index.html {{ssg_schema}}"
+      register: command_result
+      failed_when: "'Error' in command_result.stderr"
 
     - name: move files into httpd
       copy:
