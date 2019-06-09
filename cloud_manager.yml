@@ -8,6 +8,7 @@
     - name: Create Config Rule for AWS Config
       aws_config_rule:
         name: test_config_rule
+        region: us-east-2
         state: present
         description: 'This AWS Config rule checks for public write access on S3 buckets'
         scope:
