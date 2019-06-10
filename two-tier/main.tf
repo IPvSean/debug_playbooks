@@ -101,7 +101,7 @@ resource "aws_key_pair" "auth" {
   #key_name   = "${var.key_name}"
   #public_key = "${file(var.public_key_path)}"
   key_name = "terraform"
-  public_key = "${file("/var/lib/awx/.ssh")}"
+  public_key = "${file("/var/lib/awx/.ssh/sean_2019.pub")}"
 }
 
 resource "aws_instance" "web" {
