@@ -1,0 +1,22 @@
+---
+- name: PROVISION AWS INFRASTRUCTURE USING TERRAFORM
+  hosts: localhost
+  gather_facts: no
+  connection: local
+
+  tasks:
+    - name: PROVISION AWS INFRASTRUCTURE USING TERRAFORM
+      terraform:
+        project_path: "{{ playbook_dir }}"
+        state: present
+        force_init: yes
+        # backend_config:
+        #   access_key: "{{ aws_access_key }}"
+        #   secret_key: "{{ aws_secret_key }}"
+        #   bucket: "{{ aws_bucket }}"
+        #   key: "{{aws_key}}"
+        #   region: "{{ aws_region }}"
+      register: output
+
+    - debug:
+        msg: "{{ output }}"
