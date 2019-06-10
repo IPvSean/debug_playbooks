@@ -5,6 +5,14 @@
   connection: local
 
   tasks:
+    - name: figure out who i am
+      command: whoami
+      register: output_for_command
+
+    - name: print out whoami
+      debug:
+        msg: "{{ output_for_command }}"
+
     - name: PROVISION AWS INFRASTRUCTURE USING TERRAFORM
       terraform:
         project_path: "{{ playbook_dir }}"
