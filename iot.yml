@@ -4,6 +4,10 @@
   become: yes
   gather_facts: false
   tasks:
+    - name: print message
+      debug:
+        msg: "this is an IOT ansible playbook"
+
     - name: grab IOT version information
       raw: "cat /etc/*release"
       register: first_command_output
