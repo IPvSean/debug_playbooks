@@ -1,3 +1,8 @@
+---
+- name: doing automation
+  debug:
+    msg: "i am going to run the httpd role"
+
 - name: install apache
   yum:
     name: httpd
