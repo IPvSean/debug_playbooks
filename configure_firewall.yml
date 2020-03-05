@@ -5,6 +5,10 @@
   gather_facts: false
 
   tasks:
+    - name: This Ansible Playbook is configuration Palo Alto
+      debug:
+        msg: "test message"
+
     - name: CONFIGURING PALO ALTO ACCESS LISTS
       debug:
         msg: "CONFIGURING NTP"
